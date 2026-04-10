@@ -1,15 +1,20 @@
 from pydantic import BaseModel
 
-class LivroCreate(BaseModel):
+
+class LivroBase(BaseModel):
     codigo: int
     titulo: str
     preco: float
     tipo: int
     desconto_percentual: int
-    
-class LivroOut(BaseModel):
-    codigo: int
-    titulo: str
+
+
+class LivroCreate(LivroBase):
+    pass
+
+
+class LivroOut(LivroBase):
+    pass
+
+class LivroAlterarPreco(BaseModel):
     preco: float
-    tipo: int
-    desconto_percentual: int

@@ -1,11 +1,15 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
-class LeitorCreate(BaseModel):
+
+class LeitorBase(BaseModel):
     id: int
     nome: str
-    email: str
+    email: EmailStr
 
-class LeitorOut(BaseModel):
-    id: int
-    nome: str
-    email: str
+
+class LeitorCreate(LeitorBase):
+    pass
+
+
+class LeitorOut(LeitorBase):
+    pass
